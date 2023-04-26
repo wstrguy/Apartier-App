@@ -1,15 +1,19 @@
-Documentation for Apartier API
+<h1><p align="center">Documentation for Apartier API</p></h1>
 
-Introduction:
+![Schema Diagram](https://res.cloudinary.com/drd06lih3/image/upload/v1682507011/Screenshot_2023-04-26_at_12.02.09_PM_rtwopj.png)
+
+<h1>Introduction:</h1> 
 Apartier is a platform that enables users to book short-term apartments online. This API documentation provides details on how to use the API to perform various functions. Authentication and authorization have been implemented using Oauth2 with Authorization code grant types. MySQL has been used as the database management system, with the database hosted on AWS database service.
 
-Authentication:
+<h1>Authentication:</h1> 
 Authentication is required to access the API endpoints. OAuth2 has been implemented to authenticate users. Users can obtain access tokens by sending a request to the /oauth/token endpoint with their credentials. Access tokens should be included in the Authorization header of all requests as a bearer token.
 
-Social Logins:
+<h1>Social Logins:</h1> 
 Social logins have been implemented using Google authentication. Users can sign in using their Google account by sending a request to the /oauth/google endpoint. Access tokens obtained through Google authentication should also be included in the Authorization header of all requests as a bearer token.
 
-Postman Documentation Link:  https://documenter.getpostman.com/view/25799451/2s93Y6tebi
+<h2>Postman API Documentation</h2>
+
+[API link] (https://documenter.getpostman.com/view/25799451/2s93Y6tebi)
 
 Endpoint Details:
 1. Endpoint to fetch all available shortlets paginated to fetch only 10 at a time
