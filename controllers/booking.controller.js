@@ -48,14 +48,13 @@ exports.bookShortlet = async (req, res) => {
 // console.log(paystackInstance);
 
         const paystackData = paystackInstance.data.data;
-        console.log(paystackData);
 
 
 
         const savePayment = await Pool.query('INSERT INTO bookings (shortlet_id, user_id, num_of_nights, amount, payment_ref) VALUES (?, ?, ?, ?, ?)', 
         [shortlet_id, user.id, numOfNight, Number(amount), paystackData.reference]);
 
-        return res.status(200).json({message: "shorlet booked successfully", payment_url: paystackData.authorization_url});
+        return res.status(200).json({message: "shorlet booked successfully", payment_url: paystackData.authorization_url, payment_ref: paystackData.reference});
 
 
 
