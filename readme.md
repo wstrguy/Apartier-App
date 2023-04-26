@@ -9,6 +9,8 @@ Authentication is required to access the API endpoints. OAuth2 has been implemen
 Social Logins:
 Social logins have been implemented using Google authentication. Users can sign in using their Google account by sending a request to the /oauth/google endpoint. Access tokens obtained through Google authentication should also be included in the Authorization header of all requests as a bearer token.
 
+Postman Documentation Link:  https://documenter.getpostman.com/view/25799451/2s93Y6tebi
+
 Endpoint Details:
 1. Endpoint to fetch all available shortlets paginated to fetch only 10 at a time
 2. Endpoint: /shortlets

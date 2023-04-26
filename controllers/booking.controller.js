@@ -80,6 +80,8 @@ exports.verifyPayment = async (req, res) => {
         const paymentRef = getBookingDetails[0][0].payment_ref;
         const response = await paystackInstance.get(`/transaction/verify/${paymentRef}`);
 
+        console.log(paymentRef);
+
         if (response.data.data.status === 'success') {
             await Pool.query("UPDATE bookings SET status = 'approved' WHERE user_id = ?", [id]);
             await Pool.query("UPDATE shortlets SET status = 'booked' WHERE id = ?", [getBookingDetails[0][0].shortlet_id]);
