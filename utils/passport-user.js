@@ -25,7 +25,7 @@ passport.deserializeUser(async (id, done) => {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://apartier.herokuapp.com//auth/google/redirect",
+        callbackURL: "https://apartier.herokuapp.com/auth/google/redirect",
       },
       async (accessToken, refreshToken, profile, done) => {
         // console.log(profile);

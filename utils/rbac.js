@@ -3,25 +3,6 @@ const passport = require('passport');
 require('../utils/passport-user');
 const jwt = require('jsonwebtoken');
 
-// exports.isAuth = (req, res, next) => {
-//   // if user is saved in session, continue to next middleware
-//   if (req.session && req.session.user) {
-//     next();
-//   } else {
-//     res.redirect('api/shortlet/1/10'); // redirect to login page
-//   }
-// };
-
-// exports.isAuth = (req, res, next) => {
-  
-//   // if user is saved in session, continue to next middleware
-//   if (req.user) {
-//     next();
-//   } else {
-//     // res.status(403).send('Access denied.'); // user is not logged in, return 403 Forbidden
-//     res.redirect("/auth/google");
-//   }
-// };
 
 exports.isAuthGoogle = (req, res, next) => {
   const token = req.headers.authorization.split(" ")[1]; // get the token from the header
@@ -49,34 +30,7 @@ exports.isAuthGoogle = (req, res, next) => {
     }
 
    
-    // // if user is not saved in session, redirect to login page
-    // res.redirect("/auth/google");
-    // if user is not saved in session, verify user using Passport session
-
-
-  // passport.authenticate('google', { session: true }, (err, user, info) => {
-  //   if (err) {
-  //     console.error(err);
-  //     return next(err);
-  //   }
-  //   if (!user) {
-  //     // if user is not authenticated, redirect to login page
-  //     return res.redirect("/auth/google");
-  //   }
-  //   // if user is authenticated, save user to session and continue to next middleware
-  //   req.login(user, (err) => {
-  //     if (err) {
-  //       console.error(err);
-  //       return next(err);
-  //     }
-  //     return next();
-  //   });
-  // })(req, res, next);
-  };
-
-    // res.redirect("/api/google/callback");
-    // };
-
+    
 
 exports.isAdmin=(req, res, next) => {
         if (req.user && req.user.role === 'admin') {
