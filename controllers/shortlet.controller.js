@@ -13,9 +13,9 @@ exports.createShortlet =  async (req, res) => {
     let { aptName, state, numRooms, address,  price } = req.body;
     let { img1, img2 } = req.files;
 
+
     try {
  
-         // uploading images to cloudinary
         cloudinary.config({
             cloud_name: process.env.CLOUD_NAME,
             api_key: process.env.API_KEY,

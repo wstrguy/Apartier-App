@@ -28,13 +28,7 @@ passport.deserializeUser(async (id, done) => {
         callbackURL: "https://apartier.herokuapp.com/auth/google/redirect",
       },
       async (accessToken, refreshToken, profile, done) => {
-        // console.log(profile);
-        // console.log(accessToken);
-        // console.log(
-        //   { google_id: profile.id },
-        //   { username: profile.name.givenName },
-        // );
-        // console.log(accessToken);
+     
         try {
 
 
