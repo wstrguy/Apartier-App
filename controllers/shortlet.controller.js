@@ -39,7 +39,7 @@ exports.createShortlet =  async (req, res) => {
             message: 'Shortlet Created Successfully',
             data: data1[0] });
     } catch (err) {
-        console.log(err);
+        return res.status(500).json({ message: err.message });
     }
 }
 
@@ -64,7 +64,7 @@ exports.getAllShortlet = async (req, res) => {
         });
 
     } catch (err) {
-        console.log(err);
+        return res.status(500).json({ message: err.message });
     }
 }
 
@@ -81,7 +81,7 @@ exports.getShortletByState = async (req, res) => {
             data: data[0] });
         
     } catch (err) {
-        console.log(err);
+        return res.status(500).json({ message: err.message });
     }
 }
 
@@ -97,7 +97,7 @@ exports.getTotalShortlet = async (req, res) => {
             data: data[0] });
         
     } catch (err) {
-        console.log(err);
+        return res.status(500).json({ message: err.message });
     }
 }
     
