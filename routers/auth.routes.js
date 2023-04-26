@@ -18,8 +18,7 @@ router.get('/google/redirect', passport.authenticate('google') , function
         <br>
         Email: ${req.user.email},
         <br>
-        GoogleId: ${req.user.google_id},
-        token: ${req.user.token}`,
+        GoogleId: ${req.user.google_id},`,
         )
     }
 );
