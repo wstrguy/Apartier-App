@@ -15,7 +15,8 @@ Social logins have been implemented using Google authentication. Users can sign 
 
 [API link] (https://documenter.getpostman.com/view/25799451/2s93Y6tebi)
 
-Endpoint Details:
+<h1>Endpoint Details:</h1> 
+
 1. Endpoint to fetch all available shortlets paginated to fetch only 10 at a time
 2. Endpoint: /shortlets
 3. Method: GET
@@ -24,7 +25,7 @@ Endpoint Details:
 * Authorization: Bearer Access-Token
 * Content-Type: application/json
 Response Body:
-
+``` Javascript
 {
     "shortlets": [
         {
@@ -32,7 +33,6 @@ Response Body:
             "name": "Shortlet 1",
             "description": "This is a shortlet apartment.",
             "state": "Lagos",
-            "city": "Ikoyi",
             "address": "123, ABC street",
             "price_per_night": 5000,
             "available_nights": 5
@@ -43,7 +43,7 @@ Response Body:
     "page": 1,
     "per_page": 10
 }
-
+```
 
 2. Endpoint to upload new shortlets and make it only accessible to anyone with “ROLE_ADMIN”
 3. Endpoint: /shortlets
@@ -54,6 +54,7 @@ Response Body:
 * Content-Type: multipart/form-data
 Request Body:
 
+``` Javascript
 {
     "name": "Shortlet 1",
     "description": "This is a shortlet apartment.",
@@ -63,6 +64,7 @@ Request Body:
     "price_per_night": 5000,
     "available_nights": 5
 }
+```
 
 3. Endpoint to book payment and process payment with Paystack, on successful transaction
 4. Endpoint: /booking
@@ -77,20 +79,23 @@ Request Body:
 * Authorization: Bearer Access-Token
 * Content-Type: application/json
 Request Body:
+``` Javascript
+
 {
     "shortlet_id": 1,
     "start_date": "2023-05-01",
     "end_date": "2023-05-05",
     "number_of_nights": 5
 }
-
+```
+``` Javascript
 Response Body:
 
 {
     "status": "success",
     "message": "Payment successful. You have booked Shortlet 1."
 }
-
+```
 
 4. Fetch number of all available shortlets
 5. Endpoint: /shortlets/count
@@ -100,10 +105,12 @@ Request Headers:
 * Authorization: Bearer Access-Token
 * Content-Type: application/json
 Response Body:
+``` Javascript
 
 {
     "count": 20
 }
+```
 
 5. To fetch apartment by State
 6. Endpoint: /shortlets/state/{state}
@@ -114,7 +121,7 @@ Response Body:
 * Content-Type: application/json
 Response Body:
 
-
+``` Javascript
 {
     "shortlets": [
         {
@@ -133,9 +140,10 @@ Response Body:
     "page": 1,
     "per_page": 10
 }
+```
 
 
-Conclusion:
+<h1>Conclusion:</h1> 
 This API documentation provides details on the various endpoints available on the Apartier platform. Authentication has been implemented using OAuth2 with Authorization code grant types, and social logins have been integrated using Google authentication. The API uses MySQL as the database management system, with the database hosted on AWS database service.
 
 
