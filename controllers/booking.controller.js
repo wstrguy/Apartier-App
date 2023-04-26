@@ -16,7 +16,7 @@ exports.bookShortlet = async (req, res) => {
     try {
         const id = Number(shortlet_id);
         // check if shortlet is already booked by shortlet_id
-        const sql1 = 'SELECT * FROM apatier_DB.shortlets WHERE id = ?';
+        const sql1 = 'SELECT * FROM Apartier.shortlets WHERE id = ?';
         const data1 = await Pool.query(sql1, id);
         // console.log(data1[0][0]);
         if (data1[0][0].status === 'booked') {
